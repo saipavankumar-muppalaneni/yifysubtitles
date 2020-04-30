@@ -8,76 +8,32 @@
 ## Install
 
 ```bash
-$ npm i yifysubtitles --save
+$ npm i yifysubtitles-to-gs --save
 ```
-Or using yarn
-```bash
-$ yarn add yifysubtitles
-```
-
 
 ## Usage
 
 ```js
-const yifysubtitles = require('yifysubtitles');
+const yifysubtitles2GS = require('yifysubtitles-to-gs');
 
-const results = await yifysubtitles('tt1156398', {
-  path: '/tmp',
-  langs: ['en', 'fr', 'zh']
-});
+const saveSubtitles = await yifysubtitles2GS({storage: 'storage', bucketName: 'bucketName'});
+const results = await saveSubtitles('tt1156398', {
+  langs: ['en', 'vi'],
+  format: 'vtt' // Default: vtt (Only support vtt format)
+})
 console.log(results)
 /*
 [
   {
     lang: 'english',
     langShort: 'en',
-    path: '/tmp/Zombieland.2009.720p.BrRip.x264-YIFY.vtt',
+    path: 'https://[bucket_name].storage.googleapis.com/[file_name]',
     fileName: 'Zombieland.2009.720p.BrRip.x264-YIFY.vtt'
   },
   ...
 ]
 */
 ```
-
-
-## API
-
-### yifysubtitles(imdbId, [options])
-
-Returns an `Array` of the downloaded subtitles.
-
-#### imdbId
-
-Type: `String`
-
-#### options
-
-Type: `Object`
-
-##### langs
-
-Type: `Array`<br>
-Default: `['en']`<br>
-Array of the langs wanted.
-
-##### path
-
-Type: `String`<br>
-Default: `__dirname`<br>
-The path where the subtitles are going to be stored.
-
-##### format
-
-Type: `String`<br>
-Default: `vtt`<br>
-The format of subtitles. ['srt', 'vtt']
-
-##### concurrency
-
-Type: `number`<br>
-Default: `Infinity`<br>
-Minimum: `1`
-Download multiples subtitles concurency.
 
 ## License
 

@@ -1,11 +1,11 @@
 {
-  "name": "yifysubtitles",
-  "version": "2.1.5",
+  "name": "yifysubtitles-to-gs",
+  "version": "1.0.0",
   "description": "A simple wrapper to download subtitles from the yifysubtitles website.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mrdotb/yifysubtitles"
+    "url": "https://github.com/thanhdinh98/yifysubtitles"
   },
   "author": {
     "name": "mrdotb",
@@ -24,6 +24,7 @@
     "space": true
   },
   "dependencies": {
+    "@google-cloud/storage": "^4.7.0",
     "cheerio": "^1.0.0-rc.2",
     "global": "^4.3.2",
     "got": "^9.2.0",
