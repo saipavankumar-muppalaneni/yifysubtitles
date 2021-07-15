@@ -10,8 +10,8 @@ const cheerio = require('cheerio');
 const langsFormat = require('./langs');
 
 // Down const apiUri = 'http://api.yifysubtitles.com/subs';
-const uri = 'https://www.yifysubtitles.com/movie-imdb';
-const downloadUri = 'https://yifysubtitles.com';
+const uri = 'https://www.yifysubtitles.org/movie-imdb';
+const downloadUri = 'https://yifysubtitles.org';
 const langK = Object.keys(langsFormat);
 const langV = langK.map(i => langsFormat[i]);
 
